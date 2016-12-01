@@ -3,8 +3,6 @@
 
 type fun = (...args: any[]) => any;
 
-export const pipe = (fn: fun, ...fns: fun[]) => (...args: any[]) => fns.reduce((acc, fn) => fn(acc), fn(...args));
-
 // TypeScript (2.0) compiler incorrectly reports parameter/ call target sginature mismatch when using spear operator
 // https://github.com/Microsoft/TypeScript/issues/4130
 
@@ -17,9 +15,3 @@ export const compose = (fn: fun, ...rest: fun[]): fun =>
     var f0 = rest.shift();
     return fn(compose(f0, ...rest)(...args));
   };
-
-var tab: any[];
-
-
-
-

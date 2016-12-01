@@ -1,7 +1,7 @@
 import * as chai from "chai";
 const expect = chai.expect;
 
-import { compose } from '../../../src/concepts/utils';
+import { compose } from '../../../../src/concepts/utils/fn';
 
 describe('compose()', () => {
   it('should return "HELLO" when composing trim and capitalize giving an input "   hello   "', () => {
