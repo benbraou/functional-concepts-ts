@@ -5,7 +5,10 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "typings": "typings install dt~chai --global --save && typings install dt~mocha --global --save",
+    "typ-ramda": "typings install dt~ramda --save",
+    "typ-chai": "typings install dt~chai --global --save",
+    "typ-mocha": "typings install dt~mocha --global --save",
+    "typings": "npm run typ-ramda && npm run typ-chai && npm run typ-mocha",
     "test": "mocha --compilers ts:ts-node/register --recursive test",
     "lint": "tslint --format verbose 'src/**/*.ts'"
   },
@@ -18,5 +21,8 @@
     "tslint": "^3.15.1",
     "typescript": "^2.0.10",
     "typings": "^2.0.0"
+  },
+  "dependencies": {
+    "ramda": "^0.22.1"
   }
 }
