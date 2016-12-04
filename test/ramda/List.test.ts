@@ -25,4 +25,16 @@ describe('Ramda List functions', () => {
     });
   });
 
+  describe('any', () => {
+    it('Returns true if at least one of elements of the list match the predicate', () => {
+      let isPositive = (a: number) => a >= 0;
+      let negativeArray: number[] = [-1, -6, -4, -2];
+      let mixedArray: number[] = [-1, 6, -4, -2];
+      expect(R.any(isPositive, negativeArray)).is.false;
+      expect(R.any(isPositive, mixedArray)).is.true;
+    });
+  });
+
+
+
 });
