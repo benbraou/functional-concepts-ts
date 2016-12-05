@@ -57,4 +57,13 @@ describe('Ramda List functions', () => {
     });
   });
 
+  describe('concat', () => {
+    it('Returns the result of concatenating the given lists', () => {
+      let arrayOne: any[] = [-2,-1,0];
+      let arrayTwo: any[] = [1,2];
+      expect(R.concat(arrayOne,arrayTwo)).to.deep.equal([-2,-1,0,1,2]);
+    });
+  });
+ 
+
 });
