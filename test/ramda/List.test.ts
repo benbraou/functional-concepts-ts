@@ -35,6 +35,14 @@ describe('Ramda List functions', () => {
     });
   });
 
+  describe('aperture', () => {
+    it('Returns a new list, composed of n-tuples of consecutive elements.', () => {
+      let array: number[] = [1, 6, 4, 2, 7, 9];
+      expect(R.aperture(7, array)).to.deep.equal([]);
+      expect(R.aperture(3, array)).to.deep.equal([[1, 6, 4], [6, 4, 2], [4, 2, 7], [2, 7, 9]]); 
+    });
+  });
+
 
 
 });
