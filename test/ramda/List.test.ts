@@ -50,4 +50,11 @@ describe('Ramda List functions', () => {
     });
   });
 
+  describe('chain', () => {
+    it('Maps a function over a list and concatenates the results(aka flatMap)', () => {
+      let array: any[] = [1, 6, 4, 2, 7, 9];
+      expect(R.chain(x => ([0, x]), array)).to.deep.equal([0, 1, 0, 6, 0, 4, 0, 2, 0, 7, 0, 9]);
+    });
+  });
+
 });
