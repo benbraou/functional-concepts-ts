@@ -1,0 +1,35 @@
+language: node_js
+
+node_js:
+  - '5'
+
+sudo: false
+
+matrix:
+  fast_finish: true
+  include:
+  - os: osx
+    node_js: stable
+    osx_image: xcode7.3
+    env: workerCount=2
+  allow_failures:
+  - os: osx
+
+branches:
+  only:
+  - main
+cache:
+  directories:
+    - node_modules
+
+before_install:
+  - npm prune
+
+script:
+  - npm run install
+  - npm run build
+  - npm run lint
+  - npm run test
+
+git:
+  depth: 1

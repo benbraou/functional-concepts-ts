@@ -13,5 +13,5 @@ type fun = (...args: any[]) => any;
 export const compose = (fn: fun, ...rest: fun[]): fun =>
   rest.length === 0 ? fn : (...args: any[]) => {
     var f0 = rest.shift();
-    return fn(compose(f0, ...rest)(...args));
+    return fn(compose(f0!, ...rest)(...args));
   };
